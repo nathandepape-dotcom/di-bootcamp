@@ -1,0 +1,16 @@
+h2+p{color : rgb(99, 41, 41);}
+.btn-primary{
+    color: aliceblue;
+}
+.btn {
+    color: white;
+    background-color: blue;
+  }
+  
+body {
+    
+    
+    background-image: url("car.avif");
+    background-size: contain;
+  }
+  a:hover{color: aqua;}

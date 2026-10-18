@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiche de révision — HTML Quiz</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 860px; margin: 0 auto; padding: 32px 20px 80px;
+    color: #1f2937; background: #f7f9fc; line-height: 1.55;
+  }
+  h1 { font-size: 1.7em; border-bottom: 3px solid #1b63d8; padding-bottom: 8px; }
+  h2 { font-size: 1.25em; margin-top: 34px; color: #12439e;
+       background: #e7f0ff; padding: 6px 12px; border-radius: 6px; }
+  h3 { color: #0f766e; }
+  code {
+    background: #eef1f6; padding: 1px 6px; border-radius: 4px;
+    font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em;
+  }
+  pre { background: #1e293b; color: #e2e8f0; padding: 14px 16px; border-radius: 8px;
+        overflow-x: auto; font-size: 0.9em; line-height: 1.5; }
+  pre code { background: none; color: inherit; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; background: #fff; }
+  th, td { border: 1px solid #d5ddeb; padding: 7px 12px; text-align: left; }
+  th { background: #1b63d8; color: #fff; }
+  tr:nth-child(even) td { background: #f6f8fc; }
+  .warn { background: #fff7e0; border-left: 4px solid #f2a90f; padding: 10px 14px;
+          border-radius: 4px; margin: 12px 0; }
+  .tip { background: #e7f0ff; border-left: 4px solid #1b63d8; padding: 10px 14px;
+         border-radius: 4px; margin: 12px 0; }
+  strong { color: #111827; }
+</style>
+</head>
+<body>
+
+<h1>📘 Fiche de révision — HTML Quiz</h1>
+<p><strong>Seuil : 70 % · 25 min.</strong> Couvre : éléments, formulaires, sémantique, tableaux, média.</p>
+
+<h2>1. Structure d'un document HTML</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mon titre&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ... tout le contenu visible ici ...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+  <li><code>&lt;!DOCTYPE html&gt;</code> = <strong>déclaration</strong> (pas une balise) → HTML5.</li>
+  <li><code>&lt;head&gt;</code> = infos <strong>invisibles</strong> (titre, encodage).</li>
+  <li><code>&lt;body&gt;</code> = contenu <strong>visible</strong>.</li>
+</ul>
+
+<h2>2. Éléments de texte (les bases)</h2>
+<table>
+  <tr><th>Balise</th><th>Rôle</th></tr>
+  <tr><td><code>&lt;h1&gt;…&lt;h6&gt;</code></td><td>Titres (h1 = le plus important)</td></tr>
+  <tr><td><code>&lt;p&gt;</code></td><td>Paragraphe</td></tr>
+  <tr><td><code>&lt;br&gt;</code></td><td>Saut de ligne ⚠️ auto-fermante</td></tr>
+  <tr><td><code>&lt;strong&gt;</code> / <code>&lt;b&gt;</code></td><td>Gras</td></tr>
+  <tr><td><code>&lt;em&gt;</code> / <code>&lt;i&gt;</code></td><td>Italique</td></tr>
+  <tr><td><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code></td><td>Liste à puces / numérotée</td></tr>
+  <tr><td><code>&lt;li&gt;</code></td><td>Élément de liste</td></tr>
+  <tr><td><code>&lt;a href="url"&gt;</code></td><td>Lien</td></tr>
+  <tr><td><code>&lt;img src="..." alt="..."&gt;</code></td><td>Image ⚠️ auto-fermante</td></tr>
+</table>
+
+<h2>3. Les tableaux</h2>
+<div class="tip"><strong>Règle d'or : on construit ligne par ligne.</strong></div>
+<table>
+  <tr><th>Balise</th><th>Rôle</th></tr>
+  <tr><td><code>&lt;table&gt;</code></td><td>conteneur</td></tr>
+  <tr><td><code>&lt;tr&gt;</code></td><td><strong>une ligne</strong> (table row)</td></tr>
+  <tr><td><code>&lt;th&gt;</code></td><td>cellule d'<strong>en-tête</strong> (gras, centré)</td></tr>
+  <tr><td><code>&lt;td&gt;</code></td><td>cellule de <strong>donnée</strong></td></tr>
+  <tr><td><code>&lt;thead&gt; &lt;tbody&gt; &lt;tfoot&gt;</code></td><td>en-tête / corps / pied</td></tr>
+</table>
+<pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Col1&lt;/th&gt;&lt;th&gt;Col2&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+<h2>4. Les formulaires ⭐ (le gros morceau)</h2>
+<pre><code>&lt;form action="#" method="get"&gt;
+  &lt;label for="nom"&gt;Nom&lt;/label&gt;
+  &lt;input type="text" id="nom" name="nom" required&gt;
+  &lt;input type="submit" value="Envoyer"&gt;
+&lt;/form&gt;</code></pre>
+
+<h3>Attributs du <code>&lt;form&gt;</code></h3>
+<ul>
+  <li><code>action="#"</code> = où envoyer (<code>#</code> = nulle part).</li>
+  <li><code>method="get"</code> → données <strong>visibles dans l'URL</strong>.</li>
+  <li><code>method="post"</code> → données <strong>invisibles</strong> (sécurisé).</li>
+</ul>
+
+<h3>Types d'<code>&lt;input&gt;</code> (⚠️ auto-fermante)</h3>
+<table>
+  <tr><th>Type</th><th>Rôle</th></tr>
+  <tr><td><code>text</code></td><td>texte simple</td></tr>
+  <tr><td><code>password</code></td><td>texte masqué</td></tr>
+  <tr><td><code>email</code></td><td>vérifie le <code>@</code></td></tr>
+  <tr><td><code>date</code></td><td>sélecteur de date</td></tr>
+  <tr><td><code>radio</code></td><td><strong>un seul choix</strong> par groupe</td></tr>
+  <tr><td><code>checkbox</code></td><td><strong>plusieurs choix</strong> possibles</td></tr>
+  <tr><td><code>submit</code></td><td>bouton d'envoi (texte via <code>value</code>)</td></tr>
+  <tr><td><code>reset</code></td><td>vide le formulaire</td></tr>
+</table>
+
+<h3>⚠️ Checkbox vs Radio (piège classique)</h3>
+<table>
+  <tr><th></th><th>Checkbox</th><th>Radio</th></tr>
+  <tr><td>Choix</td><td><strong>plusieurs</strong></td><td><strong>un seul</strong></td></tr>
+  <tr><td><code>name</code></td><td>identique</td><td>identique</td></tr>
+  <tr><td><code>value</code></td><td>différent</td><td>différent</td></tr>
+</table>
+<div class="warn">C'est le <strong><code>type</code></strong> + le <code>name</code> identique qui fait la différence, <strong>PAS</strong> la value.</div>
+
+<h3>Autres éléments</h3>
+<ul>
+  <li><code>&lt;select&gt;</code> + <code>&lt;option&gt;</code> = <strong>liste déroulante</strong>.</li>
+  <li><code>&lt;textarea rows="5" cols="20"&gt;</code> = zone multi-lignes.</li>
+  <li><code>&lt;label for="id"&gt;</code> = étiquette liée (doit correspondre à l'<code>id</code>).</li>
+</ul>
+
+<h3>Attributs utiles</h3>
+<ul>
+  <li><code>name</code> → <strong>obligatoire</strong> pour que la valeur soit envoyée.</li>
+  <li><code>value</code> → valeur envoyée / texte du bouton.</li>
+  <li><code>required</code> → champ obligatoire.</li>
+  <li><code>placeholder</code> → texte d'exemple grisé.</li>
+</ul>
+
+<h2>5. HTML sémantique (HTML5)</h2>
+<p>Des balises qui <strong>décrivent leur contenu</strong> (au lieu de <code>&lt;div&gt;</code> partout). Aucun effet visuel, mais SEO + accessibilité.</p>
+<table>
+  <tr><th>Balise</th><th>Rôle</th></tr>
+  <tr><td><code>&lt;header&gt;</code></td><td>en-tête</td></tr>
+  <tr><td><code>&lt;nav&gt;</code></td><td>menu de navigation</td></tr>
+  <tr><td><code>&lt;section&gt;</code></td><td>section</td></tr>
+  <tr><td><code>&lt;article&gt;</code></td><td>contenu indépendant</td></tr>
+  <tr><td><code>&lt;aside&gt;</code></td><td>contenu à côté (barre latérale)</td></tr>
+  <tr><td><code>&lt;footer&gt;</code></td><td>pied de page</td></tr>
+</table>
+<p><strong>Non-sémantique</strong> : <code>&lt;div&gt;</code> (bloc) et <code>&lt;span&gt;</code> (inline).</p>
+
+<h2>6. Média HTML5</h2>
+<pre><code>&lt;video src="film.mp4" controls&gt;&lt;/video&gt;
+&lt;audio src="son.mp3" controls&gt;&lt;/audio&gt;
+&lt;iframe src="https://..."&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>Attributs : <code>controls</code>, <code>autoplay</code>, <code>loop</code>, <code>muted</code>, <code>width</code>, <code>height</code>.</li>
+  <li><code>&lt;iframe&gt;</code> = intègre <strong>une autre page</strong> dans la tienne.</li>
+</ul>
+
+<h2>7. Commentaires &amp; entités</h2>
+<pre><code>&lt;!-- ceci est un commentaire, invisible --&gt;</code></pre>
+<ul>
+  <li><code>&amp;copy;</code> = © · <code>&amp;amp;</code> = &amp; · <code>&amp;lt;</code> = &lt; · <code>&amp;gt;</code> = &gt;</li>
+</ul>
+
+<h2>8. Les 7 points pièges à retenir</h2>
+<ol>
+  <li><code>&lt;input&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code> sont <strong>auto-fermantes</strong> → pas de <code>&lt;/input&gt;</code>.</li>
+  <li><strong>Radio</strong> = un seul choix ; <strong>checkbox</strong> = plusieurs. Même <code>name</code>, <code>value</code> différente.</li>
+  <li><code>get</code> = URL visible ; <code>post</code> = caché/sécurisé.</li>
+  <li>Un tableau se construit <strong>ligne par ligne</strong> (<code>&lt;tr&gt;</code>).</li>
+  <li><code>&lt;label for="x"&gt;</code> doit pointer vers un <code>id="x"</code> identique.</li>
+  <li>La sémantique n'a <strong>aucun effet visuel</strong> — c'est du sens.</li>
+  <li><code>&amp;copy;</code> s'écrit en entité HTML, pas en caractère collé.</li>
+</ol>
+
+</body>
+</html>
