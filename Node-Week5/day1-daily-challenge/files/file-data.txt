@@ -1,0 +1,1 @@
+This text was read from files/file-data.txt with the fs module.

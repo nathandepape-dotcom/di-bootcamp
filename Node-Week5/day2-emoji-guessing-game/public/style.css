@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; max-width: 480px; margin: 40px auto; text-align: center; }
+.emoji { font-size: 96px; margin: 16px 0; }
+#options label { display: block; margin: 8px 0; font-size: 18px; }
+button { padding: 8px 16px; margin: 8px; cursor: pointer; }
+.hidden { display: none; }
+.correct { color: green; }
+.wrong { color: red; }
+#scoreForm { margin-top: 24px; }
